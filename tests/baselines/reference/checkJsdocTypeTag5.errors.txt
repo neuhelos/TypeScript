@@ -47,6 +47,7 @@ tests/cases/conformance/jsdoc/test.js(34,5): error TS2322: Type '1 | 2' is not a
     /** @type {0 | 1 | 2} - assignment should not error */
     var zeroonetwo = blargle('hi')
     
+    
     /** @typedef {{(s: string): 0 | 1; (b: boolean): 2 | 3 }} Gioconda */
     
     /** @type {Gioconda} */

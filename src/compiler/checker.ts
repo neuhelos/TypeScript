@@ -33371,8 +33371,9 @@ namespace ts {
             // A js function declaration can have a @type tag instead of a return type node, but that type must have a call signature
             if (isInJSFile(node)) {
                 const typeTag = getJSDocTypeTag(node);
+                typeTag.type
                 if (typeTag && typeTag.typeExpression && !getContextualCallSignature(getTypeFromTypeNode(typeTag.typeExpression), node)) {
-                    error(typeTag, Diagnostics.The_type_of_a_function_declaration_must_match_the_function_s_signature);
+                    error(typeTag.typeExpression.type, Diagnostics.The_type_of_a_function_declaration_must_match_the_function_s_signature);
                 }
             }
         }
